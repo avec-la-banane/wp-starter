@@ -1,0 +1,20 @@
+# Ignore local configuration
+/public/wp-config-local.php
+
+# Ignore composer packages
+/*/vendor/
+/vendor/
+
+# Ignore WordPress directory
+/public/wp-core
+
+# Shared files
+/shared
+
+/public/banana-content/plugins/*
+!/public/banana-content/plugins/index.php
+/public/banana-content/themes/*
+!/public/banana-content/themes/index.php
+/public/banana-content/mu-plugins/*
+!/public/banana-content/mu-plugins/index.php
+/public/banana-content/languages
