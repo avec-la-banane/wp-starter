@@ -1,0 +1,44 @@
+{
+    "name": "avec-la-banane/wp-starter",
+    "description": "WordPress Starter for La Banane's projects",
+    "version": "1.0.0",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Florian \"Ori\" Neveu",
+            "homepage": "https://www.florian-neveu.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "johnpbloch/wordpress-core-installer": "^2.0",
+        "johnpbloch/wordpress-core": "^6.6"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true,
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "wordpress-install-dir": "wp-core",
+        "installer-paths": {
+            "banana-content/themes/{$name}/": ["type:wordpress-theme"],
+            "banana-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "banana-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
+        }
+    }
+}
