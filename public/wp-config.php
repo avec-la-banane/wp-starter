@@ -1,4 +1,7 @@
 <?php
+
+require dirname( dirname(__FILE__) ) . '/vendor/autoload.php';
+
 /**
  * The base configuration for WordPress
  *
@@ -18,8 +21,6 @@
  * @package WordPress
  */
 
-require dirname( dirname(__FILE__) ) . '/vendor/autoload.php';
-
 if ( file_exists( dirname(__FILE__) . '/wp-config-local.php' ) ) {
 	define( 'WP_LOCAL_DEV', true );
 	include( dirname(__FILE__) . '/wp-config-local.php' );
@@ -29,6 +30,9 @@ if ( file_exists( dirname(__FILE__) . '/wp-config-local.php' ) ) {
 	define( 'DB_USER', '%%DB_USER%%' );
 	define( 'DB_PASSWORD', '%%DB_PASSWORD%%' );
 	define( 'DB_HOST', '%%DB_HOST%%' );
+
+	ini_set( 'display_errors', 0 );
+	define( 'WP_DEBUG_DISPLAY', false );
 }
 
 define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/banana-content' );
@@ -36,6 +40,8 @@ define( 'WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/banana-content'
 
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
+
+define('FORCE_SSL_ADMIN', true);
 
 /**#@+
  * Authentication unique keys and salts.
@@ -67,28 +73,11 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
  */
 $table_prefix  = 'wp_';
 
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- *
- * For information on other constants that can be used for debugging,
- * visit the documentation.
- *
- * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
- */
-ini_set( 'display_errors', 0 );
-define( 'WP_DEBUG_DISPLAY', false );
-// define( 'SAVEQUERIES', true );
-
 /* Add any custom values between this line and the "stop editing" line. */
 
 define('WPLANG', 'fr_FR');
 
 /* That's all, stop editing! Happy publishing. */
-define('FORCE_SSL_ADMIN', true);
 
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname(__FILE__) . '/public/wp-core/' );
