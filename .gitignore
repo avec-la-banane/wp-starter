@@ -10,3 +10,11 @@
 
 # Shared files
 /shared
+
+/banana-content/plugins/*
+!/banana-content/plugins/index.php
+/banana-content/themes/*
+!/banana-content/themes/index.php
+/banana-content/mu-plugins/*
+!/banana-content/mu-plugins/index.php
+/banana-content/languages

@@ -18,6 +18,8 @@
  * @package WordPress
  */
 
+require dirname( dirname(__FILE__) ) . '/vendor/autoload.php';
+
 if ( file_exists( dirname(__FILE__) . '/wp-config-local.php' ) ) {
 	define( 'WP_LOCAL_DEV', true );
 	include( dirname(__FILE__) . '/wp-config-local.php' );

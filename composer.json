@@ -25,15 +25,18 @@
         "johnpbloch/wordpress-core": "^6.6",
         "wpackagist-plugin/classic-editor": "^1.6",
         "wpackagist-plugin/wps-hide-login": "^1.9",
-        "wpackagist-plugin/wps-limit-login": "^1.5"
+        "wpackagist-plugin/wps-limit-login": "^1.5",
+        "inpsyde/wp-translation-downloader": "^2.5"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "symfony/var-dumper": "^7.1"
     },
     "config": {
         "allow-plugins": {
+            "composer/installers": true,
             "johnpbloch/wordpress-core-installer": true,
-            "composer/installers": true
+            "inpsyde/wp-translation-downloader": true
         }
     },
     "extra": {
@@ -42,6 +45,12 @@
             "banana-content/themes/{$name}/": ["type:wordpress-theme"],
             "banana-content/plugins/{$name}/": ["type:wordpress-plugin"],
             "banana-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
+        },
+        "wp-translation-downloader": {
+            "languages": [
+                "fr_FR"
+            ],
+            "languageRootDir": "banana-content/languages"
         }
     }
 }
