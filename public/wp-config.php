@@ -19,18 +19,18 @@
  */
 
 if ( file_exists( dirname(__FILE__) . '/wp-config-local.php' ) ) {
-    define( 'WP_LOCAL_DEV', true );
-    include( dirname(__FILE__) . '/wp-config-local.php' );
+	define( 'WP_LOCAL_DEV', true );
+	include( dirname(__FILE__) . '/wp-config-local.php' );
 } else {
-    define( 'WP_LOCAL_DEV', false );
-    define( 'DB_NAME', '%%DB_NAME%%' );
-    define( 'DB_USER', '%%DB_USER%%' );
-    define( 'DB_PASSWORD', '%%DB_PASSWORD%%' );
-    define( 'DB_HOST', '%%DB_HOST%%' );
+	define( 'WP_LOCAL_DEV', false );
+	define( 'DB_NAME', '%%DB_NAME%%' );
+	define( 'DB_USER', '%%DB_USER%%' );
+	define( 'DB_PASSWORD', '%%DB_PASSWORD%%' );
+	define( 'DB_HOST', '%%DB_HOST%%' );
 }
 
-//define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/banana-content' );
-//define( 'WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/banana-content' );
+define( 'WP_CONTENT_DIR', dirname( dirname(__FILE__) ) . '/banana-content' );
+define( 'WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/banana-content' );
 
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
@@ -83,10 +83,13 @@ define( 'WP_DEBUG_DISPLAY', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
+define('WPLANG', 'fr_FR');
+
 /* That's all, stop editing! Happy publishing. */
+define('FORCE_SSL_ADMIN', true);
 
 if ( ! defined( 'ABSPATH' ) ) {
-    define( 'ABSPATH', dirname(__FILE__) . '/wp-core/' );
+	define( 'ABSPATH', dirname(__FILE__) . '/public/wp-core/' );
 }
 
 /** Sets up WordPress vars and included files. */

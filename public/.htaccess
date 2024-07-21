@@ -1,3 +1,21 @@
+ #Fix issue #1 invalid wp-admin redirect
+  RewriteRule ^wp\-admin$ /wp-admin/ [L,R=301]
+
+  #If the URL start with public stop redirect
+  RewriteRule wp\-core\/index\.php$ - [L]
+
+  #If you request an URL it does not start with wp-cms
+  #Else the HTACCESS have done the redirect you can go to the index.php to execute code
+  RewriteCond %{REQUEST_URI} ^/wp-core
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ /wp-core/index.php [L]
+
+  #wp-cms is not here so we add it :)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ /wp-core/$1 [L]
+
 
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are

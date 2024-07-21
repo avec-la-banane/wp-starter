@@ -22,7 +22,10 @@
     "require": {
         "php": ">=8.2",
         "johnpbloch/wordpress-core-installer": "^2.0",
-        "johnpbloch/wordpress-core": "^6.6"
+        "johnpbloch/wordpress-core": "^6.6",
+        "wpackagist-plugin/classic-editor": "^1.6",
+        "wpackagist-plugin/wps-hide-login": "^1.9",
+        "wpackagist-plugin/wps-limit-login": "^1.5"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"
@@ -34,7 +37,7 @@
         }
     },
     "extra": {
-        "wordpress-install-dir": "wp-core",
+        "wordpress-install-dir": "public/wp-core",
         "installer-paths": {
             "banana-content/themes/{$name}/": ["type:wordpress-theme"],
             "banana-content/plugins/{$name}/": ["type:wordpress-plugin"],

@@ -1,12 +1,12 @@
 # Ignore local configuration
-/wp-config-local.php
+/public/wp-config-local.php
 
 # Ignore composer packages
 /*/vendor/
 /vendor/
 
 # Ignore WordPress directory
-/wp-core
+/public/wp-core
 
 # Shared files
 /shared
