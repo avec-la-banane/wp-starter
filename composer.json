@@ -42,15 +42,15 @@
     "extra": {
         "wordpress-install-dir": "public/wp-core",
         "installer-paths": {
-            "banana-content/themes/{$name}/": ["type:wordpress-theme"],
-            "banana-content/plugins/{$name}/": ["type:wordpress-plugin"],
-            "banana-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
+            "public/banana-content/themes/{$name}/": ["type:wordpress-theme"],
+            "public/banana-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "public/banana-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
         },
         "wp-translation-downloader": {
             "languages": [
                 "fr_FR"
             ],
-            "languageRootDir": "banana-content/languages"
+            "languageRootDir": "public/banana-content/languages"
         }
     }
 }

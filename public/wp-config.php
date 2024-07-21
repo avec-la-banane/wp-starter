@@ -31,7 +31,7 @@ if ( file_exists( dirname(__FILE__) . '/wp-config-local.php' ) ) {
 	define( 'DB_HOST', '%%DB_HOST%%' );
 }
 
-define( 'WP_CONTENT_DIR', dirname( dirname(__FILE__) ) . '/banana-content' );
+define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/banana-content' );
 define( 'WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/banana-content' );
 
 define( 'DB_CHARSET', 'utf8' );
