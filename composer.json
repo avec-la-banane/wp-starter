@@ -1,0 +1,56 @@
+{
+    "name": "avec-la-banane/wp-starter",
+    "description": "WordPress Starter for La Banane's projects",
+    "version": "1.0.0",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Florian \"Ori\" Neveu",
+            "homepage": "https://www.florian-neveu.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "johnpbloch/wordpress-core-installer": "^2.0",
+        "johnpbloch/wordpress-core": "^6.6",
+        "wpackagist-plugin/classic-editor": "^1.6",
+        "wpackagist-plugin/wps-hide-login": "^1.9",
+        "wpackagist-plugin/wps-limit-login": "^1.5",
+        "inpsyde/wp-translation-downloader": "^2.5"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "symfony/var-dumper": "^7.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "johnpbloch/wordpress-core-installer": true,
+            "inpsyde/wp-translation-downloader": true
+        }
+    },
+    "extra": {
+        "wordpress-install-dir": "public/wp-core",
+        "installer-paths": {
+            "public/banana-content/themes/{$name}/": ["type:wordpress-theme"],
+            "public/banana-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "public/banana-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
+        },
+        "wp-translation-downloader": {
+            "languages": [
+                "fr_FR"
+            ],
+            "languageRootDir": "public/banana-content/languages"
+        }
+    }
+}
